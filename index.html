@@ -1,1 +1,113 @@
 
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TGR TOP UP SHOP</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#0b1020;color:white;font-family:Arial}
+header,footer{background:#151e35;text-align:center;padding:20px}
+header h1{color:#a99cff}
+main{max-width:700px;margin:auto;padding:18px}
+.hero{background:linear-gradient(135deg,#24165c,#101d3b);padding:30px 15px;text-align:center;border-radius:15px}
+h2{color:#a99cff}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.card,.panel{background:#151e35;padding:16px;border-radius:12px;margin-bottom:12px;text-align:center}
+.price{color:#a99cff;font-size:21px;font-weight:bold}
+label{display:block;margin-top:12px}
+input,select{width:100%;padding:13px;margin-top:6px;background:#0b1020;color:white;border:1px solid #6c63ff;border-radius:8px;font-size:16px}
+button{width:100%;padding:14px;background:#6c63ff;color:white;border:0;border-radius:8px;margin-top:18px;font-size:17px}
+.pay{color:#a99cff;font-weight:bold}
+</style>
+</head>
+<body>
+
+<header>
+<h1>💎 TGR TOP UP SHOP</h1>
+</header>
+
+<main>
+<section class="hero">
+<h2>Welcome to TGR Top Up Shop</h2>
+<p>আপনার পছন্দের Diamond Package বেছে নিন</p>
+</section>
+
+<h2>💎 Diamond Packages</h2>
+<div class="grid">
+<div class="card">25 Diamonds<div class="price">৳10</div></div>
+<div class="card">50 Diamonds<div class="price">৳30</div></div>
+<div class="card">115 Diamonds<div class="price">৳85</div></div>
+<div class="card">240 Diamonds<div class="price">৳165</div></div>
+<div class="card">355 Diamonds<div class="price">৳220</div></div>
+<div class="card">610 Diamonds<div class="price">৳410</div></div>
+</div>
+
+<section class="panel">
+<h2>💳 Payment</h2>
+<p>bKash: <span class="pay">01776255065</span></p>
+<p>Nagad: <span class="pay">01783190879</span></p>
+</section>
+
+<section class="panel">
+<h2>📝 Order Now</h2>
+<form id="order">
+<label>আপনার নাম</label>
+<input id="name" required>
+
+<label>Free Fire UID</label>
+<input id="uid" required inputmode="numeric">
+
+<label>Diamond Package</label>
+<select id="pack" required>
+<option value="">প্যাকেজ বেছে নিন</option>
+<option>25 Diamonds - ৳10</option>
+<option>50 Diamonds - ৳30</option>
+<option>115 Diamonds - ৳85</option>
+<option>240 Diamonds - ৳165</option>
+<option>355 Diamonds - ৳220</option>
+<option>610 Diamonds - ৳410</option>
+</select>
+
+<label>Payment Method</label>
+<select id="payment" required>
+<option value="">বেছে নিন</option>
+<option>bKash</option>
+<option>Nagad</option>
+</select>
+
+<label>Transaction ID</label>
+<input id="trx" required>
+
+<button type="submit">WhatsApp এ Order করুন</button>
+</form>
+</section>
+
+</main>
+
+<footer>
+© 2026 TGR TOP UP SHOP
+</footer>
+
+<script>
+document.getElementById("order").addEventListener("submit",function(e){
+e.preventDefault();
+
+let message =
+"নতুন TGR TOP UP SHOP অর্ডার\n"+
+"নাম: "+document.getElementById("name").value+"\n"+
+"UID: "+document.getElementById("uid").value+"\n"+
+"Package: "+document.getElementById("pack").value+"\n"+
+"Payment: "+document.getElementById("payment").value+"\n"+
+"Transaction ID: "+document.getElementById("trx").value;
+
+window.open(
+"https://wa.me/8801783190879?text="+encodeURIComponent(message),
+"_blank"
+);
+});
+</script>
+
+</body>
+</html>
